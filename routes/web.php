@@ -3,6 +3,7 @@
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\MapelController;
+use App\Http\Controllers\KelasController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -12,3 +13,11 @@ Route::get('/', function () {
 Route::get('siswa/index', [SiswaController::class, 'index']);
 Route::get('guru/index', [GuruController::class, 'index']);
 Route::get('mapel/index', [MapelController::class, 'index']);
+
+// Route Kelas
+Route::get('/kelas', [KelasController::class,'index']);
+Route::get('/kelas/create', [KelasController::class,'create']);
+Route::post('/kelas/store', [KelasController::class, 'store'] );
+Route::get('/kelas/edit/{id}', [KelasController::class,'edit']);
+Route::post('/kelas/update/{id}', [KelasController::class,'update']);
+Route::get('/kelas/delete/{id}', [KelasController::class, 'destroy']);
