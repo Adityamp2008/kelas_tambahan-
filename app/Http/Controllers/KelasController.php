@@ -13,7 +13,8 @@ class KelasController extends Controller
 
         public function index()
         {
-            return view("kelas.index");
+            $kelas = Kelas::all();
+            return view("kelas.index", compact("kelas"));
         }
 
         public function create()

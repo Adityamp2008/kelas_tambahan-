@@ -12,7 +12,7 @@
     <a href="{{ route('kelas.index') }}">kembali</a>
 
     <form action="/kelas/store" method="POST">
-        @csrf
+        @csrf 
         <label for="nama_kelas">nama kelas</label>
         <input type="text" name="nama_kelas" id="nama_kelas">
         <button type="submit">simpan</button>

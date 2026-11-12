@@ -6,9 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hello world!</h1>
-    <a href="{{ route('kelas.create') }}">tambah</a>
+    <h1>Halaman Kelas</h1>
+    <a href="{{ route('kelas.create') }}">Tambah Kelas</a>
 
- 
+    <ul>
+        @foreach ($kelas as $k)
+            <li> {{  $k->nama_kelas }} </li>
+        @endforeach
+    </ul>
+        
 </body>
 </html>
