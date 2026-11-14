@@ -36,6 +36,34 @@ class KelasController extends Controller
         return redirect('kelas');
     }
 
+    public function edit($id)
+{
+    $kelas = Kelas::findOrFail($id);
+
+    return view('kelas.edit', compact('kelas'));
+}
+
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'nama_kelas' => 'required',
+    ]);
+
+    $kelas = Kelas::findOrFail($id);
+
+    $kelas->update([
+        'nama_kelas' => $request->nama_kelas,
+    ]);
+
+    return redirect('kelas')->with('success', 'Data kelas berhasil diperbarui!');
+}
+
+    public function destroy($id)
+    {
+        $kelas = Kelas::findOrfail($id);
+        $kelas->delete();
+        return redirect('kelas');    
+        }
 
     // public function index()
     // {

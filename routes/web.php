@@ -18,6 +18,9 @@ Route::get('/', function () {
     Route::get('/kelas', [KelasController::class,'index'])->name('kelas.index');
     Route::get('kelas/create', [KelasController::class,'create'])->name('kelas.create');
     Route::post('/kelas/store', [KelasController::class, 'store'])->name('kelas.store');
+    Route::get('/kelas/{id}/edit', [KelasController::class, 'edit'])->name('kelas.edit');
+    Route::put('/kelas/{id}', [KelasController::class, 'update'])->name('kelas.update');
+    route::delete('/kelas/{id}', [KelasController::class, 'destroy'])->name('kelas.destroy');
     
     
     
